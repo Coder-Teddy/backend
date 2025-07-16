@@ -2,7 +2,14 @@ defmodule BackendWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :backend
 
   plug CORSPlug,
-  origin: ["http://localhost:3000", "https://backend-cold-snowflake-4736.fly.dev"],
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "https://backend-cold-snowflake-4736.fly.dev",
+    "https://invideoai-assignment-kunal-coderteddys-projects.vercel.app",
+    "https://invideoai-assignment-kunal-git-main-coderteddys-projects.vercel.app",
+    "https://invideoai-assignment-kunal.vercel.app"
+    ],
   max_age: 86400,
   methods: ["GET", "POST", "OPTIONS"],
   headers: ["content-type"]
