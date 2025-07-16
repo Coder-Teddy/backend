@@ -2,7 +2,7 @@ defmodule BackendWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :backend
 
   plug CORSPlug,
-  origin: ["http://localhost:3000", "https://two-tab-frontend.fly.dev"],
+  origin: ["http://localhost:3000", "https://backend-cold-snowflake-4736.fly.dev"],
   max_age: 86400,
   methods: ["GET", "POST", "OPTIONS"],
   headers: ["content-type"]
