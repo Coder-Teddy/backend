@@ -8,7 +8,15 @@
 import Config
 
 config :backend,
+  ecto_repos: [Backend.Repo],
   generators: [timestamp_type: :utc_datetime]
+
+# Configure the database
+config :backend, Backend.Repo,
+  database: Path.expand("../backend_dev.db", __DIR__),
+  pool_size: 5,
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true
 
 # Configures the endpoint
 config :backend, BackendWeb.Endpoint,
