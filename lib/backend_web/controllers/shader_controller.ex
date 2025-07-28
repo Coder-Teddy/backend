@@ -83,21 +83,4 @@ defmodule BackendWeb.ShaderController do
 
     json(conn, %{shaders: formatted_shaders})
   end
-
-  def show(conn, %{"id" => id}) do
-    try do
-      shader = Shaders.get_shader!(id)
-      json(conn, %{
-        id: shader.id,
-        shader: shader.shader_code,
-        description: shader.description,
-        created_at: shader.inserted_at
-      })
-    rescue
-      Ecto.NoResultsError ->
-        conn
-        |> put_status(:not_found)
-        |> json(%{error: "Shader not found"})
-    end
-  end
 end
